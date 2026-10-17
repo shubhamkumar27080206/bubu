@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sorry, Nidhi 💛</title>
+<title>Sorry, Bubu 💛</title>
 <meta name="description" content="A small apology, made with a lot of love.">
 <meta name="theme-color" content="#ffd9e6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,8 +137,8 @@
   <!-- 1. HERO -->
   <section class="hero" id="top">
     <div id="heroArt"><div class="teddy" aria-hidden="true">🧸</div></div>
-    <div class="hi" id="hi">hey you,</div>
-    <h1 id="title">I'm sorry, Nidhi</h1>
+    <div class="hi" id="hi">hey,</div>
+    <h1 id="title">I'm sorry</h1>
     <p class="typed"><span id="typed"></span><span class="cursor"></span></p>
     <a class="scroll" href="#menu">scroll down ↓</a>
   </section>
@@ -152,16 +152,16 @@
 
   <!-- 2b. PHOTOS -->
   <section id="gallery">
-    <h2 class="rv" data-t="galleryTitle">Us 📸</h2>
-    <p class="sub rv" data-t="gallerySub">My favourite moments with you. Tap a photo to see it bigger.</p>
+    <h2 class="rv" data-t="galleryTitle">We 📸</h2>
+    <p class="sub rv" data-t="gallerySub">Our favourite moments. Tap a photo to see it bigger.</p>
     <div class="polaroids rv" id="pols"></div>
   </section>
   <div id="lb" role="dialog" aria-label="Photo"><img alt=""><p></p></div>
 
   <!-- 3. POSTMORTEM -->
   <section id="pm">
-    <h2 class="rv">The Official Postmortem</h2>
-    <p class="sub rv">Because I'm a DevOps guy as you know, I am not a jira guy.</p>
+    <h2 class="rv">Terminal wo v sorry wali</h2>
+    <p class="sub rv">Because I am a DevOps guy as you know, Not a jira guy.</p>
     <div class="term rv">
       <div class="bar"><i></i><i></i><i></i></div>
 <pre><span class="g">shubham@love</span>:<span class="y">~</span>$ cat incident_report.md
@@ -237,33 +237,33 @@ const CONFIG = {
 
   /* Polaroid gallery: add as many as you like. Files go in the images folder. */
   photos: [
-    { src: "images/1.jpg", caption: "The day we laughed non-stop" },
-    { src: "images/2.jpg", caption: "My favourite smile" },
-    { src: "images/3.jpg", caption: "Us, being us" },
-    { src: "images/4.jpg", caption: "Never letting go" }
+    { src: "images/1.jpeg", caption: "Happy times" },
+    { src: "images/2.jpeg", caption: "My favourite smile" },
+    { src: "images/3.jpeg", caption: "Us, being us" },
+    { src: "images/4.jpeg", caption: "Never letting go" }
   ],
 
   /* Section headings and messages: change any of these freely (HTML like <br> works). */
   text: {
-    galleryTitle: "Us 📸",
-    gallerySub: "My favourite moments with you. Tap a photo to see it bigger.",
+    galleryTitle: "We 📸",
+    gallerySub: "Our favourite moments. Tap a photo to see it bigger.",
     menuTitle: "Pick how you want my sorry",
     menuSub: "I couldn't decide on just one way to say it, so here is a whole menu. Tap a card 💌",
     couponsTitle: "Redeemable Apology Coupons",
     couponsSub: "Valid forever. No expiry. No terms and conditions. Tap to redeem 🎟️",
-    finalTitle: "So, Nidhi...",
+    finalTitle: "So, Bubu...",
     finalSub: "Will you forgive this silly, sorry boy?",
-    thanksTitle: "Thank you, Nidhi",
+    thanksTitle: "Thank you, Bubuuiee",
     thanksBody: "You just made my whole day. I promise to do better, to listen more, and to keep that beautiful smile of yours safe.<br>You mean the world to me.",
     signature: "Forever yours, Shubham 🧸",
     footer: "made with 💛 by Shubham, only for Nidhi"
   },
 
   cards: [
-    { emo:"💌", t:"A Tiny Letter", back:"<span class='script'>You are the best part of my day, and I'm sorry I made it hard for you. I'll do better. I promise.</span>" },
-    { emo:"🌸", t:"A Little Poem", back:"<span class='script'>Roses are red,<br>violets are blue,<br>I messed up today,<br>but I still choose you.</span>" },
-    { emo:"🤝", t:"A Real Promise", back:"I promise to listen first, talk second, and never let a small thing become a big silence again.<small>Signed: Shubham</small>" },
-    { emo:"📸", t:"A Memory", back:"Remember that time we laughed so hard we couldn't breathe? I want a million more of those. Let me earn them back.<small>(add your own memory here!)</small>" },
+    { emo:"💌", t:"A Tiny Letter", back:"<span class='script'>You are the best part of my day, and I'm sorry I made it hard for you.</span>" },
+    { emo:"🌸", t:"A Little Poem", back:"<span class='script'>Tumhari ek muskaan pe, saari duniya bhool jaata hoon,Naraaz ho jaao toh, khud se hi rooth jaata hoon. Galti meri thi, par saza dil ko mili,Tum hans do ek baar, toh meri saari duniya khili. 🌸</span>" },
+    { emo:"🤝", t:"A Real Promise", back:"A relationship takes two people, and both of us should understand each other, accept our mistakes, and put equal effort into fixing things. It should never be me against you, but always us against the problem. ❤️.<small>Signed: Shubham</small>" },
+    { emo:"📸", t:"A Memory", back:"Nidhi, I still remember that morning when we first met, our early morning bike ride, and how even the simplest moments with you became so special. I may not remember every little detail perfectly, but I’ll always remember how that day felt. 🥹❤️</small>" },
     { emo:"🍫", t:"A Sweet Bribe", back:"<span class='script'>One chocolate, one hug, and one very sorry boy are waiting for you.</span>" },
     { emo:"🥺", t:"The Puppy Eyes", back:"<span class='script'>Imagine the saddest puppy eyes ever. That's me right now. Please smile?</span>" }
   ],
@@ -294,8 +294,8 @@ const $ = s => document.querySelector(s);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* names */
-document.title = `Sorry, ${CONFIG.her} 💛`;
-$('#title').textContent = `I'm sorry, ${CONFIG.her}`;
+document.title = `Sorry ${CONFIG.her} 💛`;
+$('#title').textContent = `I'm sorry`;
 $('#hi').textContent = `hey ${CONFIG.her.toLowerCase()},`;
 
 /* custom texts */
