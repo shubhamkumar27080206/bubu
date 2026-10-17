@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorry, Nidhi 💛</title>
+<meta name="description" content="A small apology, made with a lot of love.">
+<meta name="theme-color" content="#ffd9e6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#ff7eb3; --peach:#ffb199; --lilac:#b79cff; --cream:#fff8f3; --ink:#4a3350; --soft:#7d6483;
+    --glass:rgba(255,255,255,.55); --line:rgba(255,255,255,.8);
+    --shadow:0 18px 50px rgba(183,120,170,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif; color:var(--ink); min-height:100vh; overflow-x:hidden;
+    background:linear-gradient(135deg,#ffe3ee 0%,#ffeede 35%,#efe4ff 70%,#e3f0ff 100%);
+    background-attachment:fixed;
+  }
+  #bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+  main{position:relative;z-index:1}
+  section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 18px;text-align:center}
+  .script{font-family:'Caveat',cursive}
+  .serif{font-family:'Playfair Display',serif}
+
+  /* HERO */
+  .hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2.6rem,10vw,6rem);line-height:1.05;
+    background:linear-gradient(90deg,var(--rose),var(--lilac),var(--peach));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .hi{font-family:'Caveat',cursive;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--soft);margin-bottom:6px}
+  .typed{margin-top:22px;min-height:3.2em;max-width:560px;font-size:clamp(1rem,3.6vw,1.2rem);color:var(--soft);line-height:1.7;font-weight:300}
+  .cursor{display:inline-block;width:2px;height:1.1em;background:var(--rose);margin-left:2px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .teddy{font-size:clamp(4rem,16vw,7rem);animation:float 4s ease-in-out infinite;filter:drop-shadow(0 12px 16px rgba(180,100,140,.3));margin-bottom:10px}
+  @keyframes float{50%{transform:translateY(-14px) rotate(3deg)}}
+  .scroll{margin-top:38px;color:var(--soft);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;animation:bob 2s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(8px)}}
+
+  h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(1.8rem,6vw,3rem);margin-bottom:8px}
+  .sub{color:var(--soft);font-weight:300;margin-bottom:34px;max-width:520px;line-height:1.6}
+
+  /* reveal on scroll */
+  .rv{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* FLIP CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;width:100%;max-width:1000px}
+  .flip{perspective:1000px;height:250px;cursor:pointer;background:none;border:0;font:inherit;color:inherit;text-align:center}
+  .flip:focus-visible{outline:3px solid var(--rose);outline-offset:4px;border-radius:24px}
+  .face{position:absolute;inset:0;border-radius:24px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .7s cubic-bezier(.2,.8,.2,1);
+    background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .flip{position:relative}
+  .front .emo{font-size:3rem;margin-bottom:10px}
+  .front .t{font-family:'Playfair Display',serif;font-size:1.25rem}
+  .front .tap{margin-top:10px;font-size:.75rem;color:var(--soft);letter-spacing:.12em;text-transform:uppercase}
+  .back{transform:rotateY(180deg);background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(255,226,238,.85));font-size:1rem;line-height:1.65}
+  .back .script{font-size:1.45rem;line-height:1.35}
+  .flip.open .front{transform:rotateY(-180deg)}
+  .flip.open .back{transform:rotateY(0)}
+  .back small{display:block;margin-top:10px;color:var(--soft);font-size:.78rem}
+
+  /* HERO PHOTO */
+  .heroPhoto{width:clamp(130px,38vw,190px);height:clamp(130px,38vw,190px);border-radius:50%;object-fit:cover;border:6px solid #fff;
+    box-shadow:0 18px 40px rgba(220,110,160,.4),0 0 0 8px rgba(255,255,255,.4);margin-bottom:14px;animation:float 4s ease-in-out infinite}
+
+  /* POLAROID GALLERY */
+  .polaroids{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;width:100%;max-width:1000px}
+  .pol{width:min(250px,78vw);background:#fff;padding:12px 12px 16px;border-radius:6px;box-shadow:0 16px 36px rgba(120,70,120,.25);
+    transform:rotate(var(--r,0deg));transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;cursor:zoom-in;border:0;font:inherit;color:inherit;position:relative}
+  .pol:hover,.pol:focus-visible{transform:rotate(0) scale(1.06) translateY(-6px);box-shadow:0 26px 50px rgba(120,70,120,.35);z-index:3;outline:none}
+  .pol::before{content:"";position:absolute;top:-12px;left:50%;width:78px;height:24px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,200,220,.75);border-radius:3px}
+  .pol .ph{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:linear-gradient(135deg,#ffd9e6,#e6dcff)}
+  .pol .empty{width:100%;aspect-ratio:1/1;border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    background:linear-gradient(135deg,#ffe3ee,#e9e0ff);color:var(--soft);font-size:.8rem;padding:10px}
+  .pol .empty span{font-size:2.4rem}
+  .pol .cap{font-family:'Caveat',cursive;font-size:1.45rem;margin-top:10px;color:var(--ink);line-height:1.2}
+  #lb{position:fixed;inset:0;z-index:100;background:rgba(40,20,50,.8);display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;cursor:zoom-out;backdrop-filter:blur(6px)}
+  #lb.show{display:flex}
+  #lb img{max-width:min(92vw,720px);max-height:78vh;border-radius:10px;border:8px solid #fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  #lb p{font-family:'Caveat',cursive;font-size:1.8rem;color:#fff;margin-top:14px;text-align:center}
+
+  /* POSTMORTEM */
+  .term{width:100%;max-width:640px;text-align:left;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:#2a1f33;color:#f6e9ff;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem;line-height:1.75}
+  .bar{display:flex;gap:7px;padding:12px 16px;background:#3a2a45}
+  .bar i{width:12px;height:12px;border-radius:50%;display:block}
+  .bar i:nth-child(1){background:#ff6b8a}.bar i:nth-child(2){background:#ffd36b}.bar i:nth-child(3){background:#7be0a4}
+  .term pre{padding:18px 20px;white-space:pre-wrap;word-break:break-word;font:inherit}
+  .k{color:#ff9ec7}.g{color:#8ff0b5}.y{color:#ffe08a}.d{color:#a99ab8}
+
+  /* COUPONS */
+  .coupon{position:relative;height:150px}
+  .coupon .face{flex-direction:row;gap:14px;text-align:left;justify-content:flex-start;padding:18px 22px;border-style:dashed;border-width:2px;border-color:rgba(255,126,179,.6)}
+  .coupon .emo{font-size:2.4rem}
+  .coupon .t{font-weight:600;font-size:1.02rem}
+  .coupon p{font-size:.82rem;color:var(--soft);margin-top:3px}
+  .coupon .back{justify-content:center;text-align:center;flex-direction:column;gap:2px}
+  .stamp{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--rose)}
+
+  /* SORRY COUNTER */
+  .counter{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .num{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,16vw,6.5rem);line-height:1;background:linear-gradient(90deg,var(--rose),var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;min-height:1.1em}
+  .btn{border:0;cursor:pointer;font:inherit;font-weight:500;color:#fff;padding:15px 30px;border-radius:999px;background:linear-gradient(135deg,var(--rose),#ff9a8b);
+    box-shadow:0 12px 28px rgba(255,126,179,.45);transition:transform .2s,box-shadow .2s;font-size:1rem}
+  .btn:hover{transform:translateY(-3px) scale(1.03)}
+  .btn:active{transform:scale(.96)}
+  .btn.alt{background:rgba(255,255,255,.7);color:var(--ink);box-shadow:var(--shadow)}
+  .meter{width:min(320px,80vw);height:12px;border-radius:99px;background:rgba(255,255,255,.7);overflow:hidden}
+  .meter b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--lilac));transition:width .3s}
+  .note{font-size:.85rem;color:var(--soft);min-height:1.4em}
+
+  /* FINAL */
+  .final h2{font-size:clamp(2rem,8vw,3.8rem)}
+  .choices{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:22px;min-height:70px;align-items:center}
+  #no{transition:left .25s ease,top .25s ease}
+  .thanks{display:none;max-width:560px}
+  .thanks.show{display:block;animation:pop .8s cubic-bezier(.2,1.4,.3,1)}
+  @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+  .thanks .big{font-size:5rem}
+  .thanks p{margin-top:14px;line-height:1.8;color:var(--soft)}
+  .sign{font-family:'Caveat',cursive;font-size:2.2rem;margin-top:18px;color:var(--rose)}
+  footer{position:relative;z-index:1;text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:.85rem}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero" id="top">
+    <div id="heroArt"><div class="teddy" aria-hidden="true">🧸</div></div>
+    <div class="hi" id="hi">hey you,</div>
+    <h1 id="title">I'm sorry, Nidhi</h1>
+    <p class="typed"><span id="typed"></span><span class="cursor"></span></p>
+    <a class="scroll" href="#menu">scroll down ↓</a>
+  </section>
+
+  <!-- 2. MENU OF SORRIES -->
+  <section id="menu">
+    <h2 class="rv" data-t="menuTitle">Pick how you want my sorry</h2>
+    <p class="sub rv" data-t="menuSub">I couldn't decide on just one way to say it, so here is a whole menu. Tap a card 💌</p>
+    <div class="grid rv" id="cards"></div>
+  </section>
+
+  <!-- 2b. PHOTOS -->
+  <section id="gallery">
+    <h2 class="rv" data-t="galleryTitle">Us 📸</h2>
+    <p class="sub rv" data-t="gallerySub">My favourite moments with you. Tap a photo to see it bigger.</p>
+    <div class="polaroids rv" id="pols"></div>
+  </section>
+  <div id="lb" role="dialog" aria-label="Photo"><img alt=""><p></p></div>
+
+  <!-- 3. POSTMORTEM -->
+  <section id="pm">
+    <h2 class="rv">The Official Postmortem</h2>
+    <p class="sub rv">Because I'm a DevOps guy as you know, I am not a jira guy.</p>
+    <div class="term rv">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="g">shubham@love</span>:<span class="y">~</span>$ cat incident_report.md
+
+<span class="k"># INCIDENT #001: Nidhi is upset</span>
+<span class="d">Severity   :</span> critical (my heart, not the server)
+<span class="d">Root cause :</span> I was wrong. No blame-shifting. Only me.
+<span class="d">Impact     :</span> your smile went offline 😔
+<span class="d">Detected by:</span> your very fair silence
+
+<span class="k">## Fix deployed</span>
+ <span class="g">✔</span> listen first, defend never
+ <span class="g">✔</span> think before I speak
+ <span class="g">✔</span> say "I understand" and actually mean it
+ <span class="g">✔</span> hug on demand, zero latency
+
+<span class="k">## Status</span>
+<span class="y">Waiting for Nidhi to close this ticket...</span> 🥺
+<span class="g">shubham@love</span>:<span class="y">~</span>$ <span class="cursor"></span></pre>
+    </div>
+  </section>
+
+  <!-- 4. COUPONS -->
+  <section id="coupons">
+    <h2 class="rv" data-t="couponsTitle">Redeemable Apology Coupons</h2>
+    <p class="sub rv" data-t="couponsSub">Valid forever. No expiry. No terms and conditions. Tap to redeem 🎟️</p>
+    <div class="grid rv" id="coups"></div>
+  </section>
+
+  <!-- 5. COUNTER -->
+  <section id="counter">
+    <h2 class="rv">How sorry am I?</h2>
+    <p class="sub rv">Tap the button. Go on. Let's find out.</p>
+    <div class="counter rv">
+      <div class="num" id="num">0</div>
+      <div class="meter"><b id="fill"></b></div>
+      <button class="btn" id="sorryBtn">Add a sorry 💗</button>
+      <div class="note" id="note"></div>
+    </div>
+  </section>
+
+  <!-- 6. FINAL -->
+  <section class="final" id="final">
+    <div id="ask">
+      <h2 class="rv" data-t="finalTitle">So, Nidhi...</h2>
+      <p class="sub rv" style="margin-inline:auto" data-t="finalSub">Will you forgive this silly, sorry boy?</p>
+      <div class="choices" id="choices">
+        <button class="btn" id="yes">Yes, I forgive you 💖</button>
+        <button class="btn alt" id="no">No 😤</button>
+      </div>
+      <div class="note" id="noNote" style="margin-top:18px"></div>
+    </div>
+    <div class="thanks" id="thanks">
+      <div class="big">🥹💛</div>
+      <h2 data-t="thanksTitle">Thank you, Nidhi</h2>
+      <p data-t="thanksBody">You just made my whole day. I promise to do better, to listen more, and to keep that beautiful smile of yours safe.<br>You mean the world to me.</p>
+      <div class="sign" data-t="signature">Forever yours, Shubham 🧸</div>
+      <button class="btn alt" style="margin-top:26px" onclick="location.reload()">Replay ↺</button>
+    </div>
+  </section>
+</main>
+
+<footer data-t="footer">made with 💛 by Shubham, only for Nidhi</footer>
+
+<script>
+/* ============ EDIT YOUR TEXT HERE ============ */
+const CONFIG = {
+  her: "Nidhi",
+  him: "Shubham",
+  typed: "I know I hurt you, and I hate that I did. You deserve a lot better than my mistake. So I made you this tiny corner of the internet, just to say sorry the best way I know how.",
+  /* Round photo on the first screen. Put a file in the images folder, e.g. "images/hero.jpg". Leave "" to keep the teddy. */
+  heroPhoto: "",
+
+  /* Polaroid gallery: add as many as you like. Files go in the images folder. */
+  photos: [
+    { src: "images/1.jpg", caption: "The day we laughed non-stop" },
+    { src: "images/2.jpg", caption: "My favourite smile" },
+    { src: "images/3.jpg", caption: "Us, being us" },
+    { src: "images/4.jpg", caption: "Never letting go" }
+  ],
+
+  /* Section headings and messages: change any of these freely (HTML like <br> works). */
+  text: {
+    galleryTitle: "Us 📸",
+    gallerySub: "My favourite moments with you. Tap a photo to see it bigger.",
+    menuTitle: "Pick how you want my sorry",
+    menuSub: "I couldn't decide on just one way to say it, so here is a whole menu. Tap a card 💌",
+    couponsTitle: "Redeemable Apology Coupons",
+    couponsSub: "Valid forever. No expiry. No terms and conditions. Tap to redeem 🎟️",
+    finalTitle: "So, Nidhi...",
+    finalSub: "Will you forgive this silly, sorry boy?",
+    thanksTitle: "Thank you, Nidhi",
+    thanksBody: "You just made my whole day. I promise to do better, to listen more, and to keep that beautiful smile of yours safe.<br>You mean the world to me.",
+    signature: "Forever yours, Shubham 🧸",
+    footer: "made with 💛 by Shubham, only for Nidhi"
+  },
+
+  cards: [
+    { emo:"💌", t:"A Tiny Letter", back:"<span class='script'>You are the best part of my day, and I'm sorry I made it hard for you. I'll do better. I promise.</span>" },
+    { emo:"🌸", t:"A Little Poem", back:"<span class='script'>Roses are red,<br>violets are blue,<br>I messed up today,<br>but I still choose you.</span>" },
+    { emo:"🤝", t:"A Real Promise", back:"I promise to listen first, talk second, and never let a small thing become a big silence again.<small>Signed: Shubham</small>" },
+    { emo:"📸", t:"A Memory", back:"Remember that time we laughed so hard we couldn't breathe? I want a million more of those. Let me earn them back.<small>(add your own memory here!)</small>" },
+    { emo:"🍫", t:"A Sweet Bribe", back:"<span class='script'>One chocolate, one hug, and one very sorry boy are waiting for you.</span>" },
+    { emo:"🥺", t:"The Puppy Eyes", back:"<span class='script'>Imagine the saddest puppy eyes ever. That's me right now. Please smile?</span>" }
+  ],
+  coupons: [
+    { emo:"🤗", t:"One Giant Hug", d:"Unlimited. Squeeze level: your choice." },
+    { emo:"🍕", t:"Pizza Date", d:"Your favourite toppings. I'm paying." },
+    { emo:"🍦", t:"Ice Cream Run", d:"Any flavour, any time, any weather." },
+    { emo:"🎬", t:"Movie Night", d:"You pick the movie. No complaints from me." },
+    { emo:"👂", t:"Full Attention Hour", d:"Phone away. Just you, and I only listen." },
+    { emo:"😂", t:"Free Laughter", d:"My worst jokes, on demand, until you smile." }
+  ],
+  counterNotes: [
+    [1, "That's one."],
+    [5, "Still counting..."],
+    [10, "Okay, I'm really sorry."],
+    [25, "Wait, how many is this?"],
+    [50, "Nidhi, please check the meter."],
+    [100, "100% sorry. Meter full."],
+    [150, "Overflow error: too much sorry 🚨"],
+    [250, "Server crashed from sorry. Rebooting with love."],
+    [500, "Fine. Sorry = ∞"]
+  ],
+  noLines: ["Hmm, try again 😏","That button is shy 🙈","Almost got it...","You can't catch it 😜","Okay, the 'No' button quit.","Please just say yes 🥹"]
+};
+/* ============================================= */
+
+const $ = s => document.querySelector(s);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* names */
+document.title = `Sorry, ${CONFIG.her} 💛`;
+$('#title').textContent = `I'm sorry, ${CONFIG.her}`;
+$('#hi').textContent = `hey ${CONFIG.her.toLowerCase()},`;
+
+/* custom texts */
+document.querySelectorAll('[data-t]').forEach(el => { const v = CONFIG.text[el.dataset.t]; if (v) el.innerHTML = v; });
+
+/* hero photo */
+if (CONFIG.heroPhoto){
+  const im = new Image(); im.className = 'heroPhoto'; im.alt = CONFIG.her; im.src = CONFIG.heroPhoto;
+  im.onload = () => { $('#heroArt').innerHTML = ''; $('#heroArt').appendChild(im); };
+}
+
+/* polaroid gallery + lightbox */
+(function(){
+  const wrap = $('#pols'), lb = $('#lb'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('p');
+  const tilts = [-4, 3, -2, 5, -5, 2];
+  CONFIG.photos.forEach((p, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'pol'; b.style.setProperty('--r', tilts[i % tilts.length] + 'deg');
+    const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = p.caption || '';
+    const img = new Image(); img.className = 'ph'; img.alt = p.caption || 'Photo'; img.loading = 'lazy';
+    const empty = document.createElement('div'); empty.className = 'empty'; empty.innerHTML = '<span>📷</span>your photo goes here';
+    img.onerror = () => img.replaceWith(empty);
+    img.src = p.src;
+    b.append(img, cap); wrap.appendChild(b);
+    b.addEventListener('click', () => {
+      if (!img.isConnected) return;
+      lbImg.src = p.src; lbCap.textContent = p.caption || ''; lb.classList.add('show');
+    });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('show'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('show'); });
+})();
+
+/* typewriter */
+(function(){
+  const el = $('#typed'), txt = CONFIG.typed; let i = 0;
+  if (reduced){ el.textContent = txt; return; }
+  (function step(){ el.textContent = txt.slice(0, ++i); if (i < txt.length) setTimeout(step, 32); })();
+})();
+
+/* flip cards */
+function buildFlip(container, items, cls, frontFn, backFn){
+  items.forEach(it => {
+    const b = document.createElement('button');
+    b.className = 'flip ' + cls; b.type = 'button';
+    b.innerHTML = `<div class="face front">${frontFn(it)}</div><div class="face back">${backFn(it)}</div>`;
+    b.addEventListener('click', () => {
+      const opening = !b.classList.contains('open');
+      b.classList.toggle('open');
+      if (opening){ const r = b.getBoundingClientRect(); burst(r.left + r.width/2, r.top + r.height/2, 14); }
+    });
+    container.appendChild(b);
+  });
+}
+buildFlip($('#cards'), CONFIG.cards, '',
+  c => `<div class="emo">${c.emo}</div><div class="t">${c.t}</div><div class="tap">tap to open</div>`,
+  c => c.back);
+buildFlip($('#coups'), CONFIG.coupons, 'coupon',
+  c => `<div class="emo">${c.emo}</div><div><div class="t">${c.t}</div><p>${c.d}</p></div>`,
+  c => `<div class="stamp">Redeemed ✓</div><p style="color:var(--soft);font-size:.85rem">${c.t} is yours, ${CONFIG.her} 💛</p>`);
+
+/* scroll reveal */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* sorry counter */
+let count = 0;
+$('#sorryBtn').addEventListener('click', e => {
+  count++;
+  $('#num').textContent = count > 500 ? '∞' : count;
+  $('#fill').style.width = Math.min(100, count) + '%';
+  let msg = ''; CONFIG.counterNotes.forEach(([n, m]) => { if (count >= n) msg = m; });
+  $('#note').textContent = msg;
+  burst(e.clientX || innerWidth/2, e.clientY || innerHeight/2, 6, true);
+});
+
+/* runaway NO button */
+const no = $('#no'); let tries = 0, floating = false;
+function dodge(e){
+  if (e){ e.preventDefault(); }
+  if (!floating){
+    const r = no.getBoundingClientRect();
+    no.style.position = 'fixed'; no.style.left = r.left + 'px'; no.style.top = r.top + 'px'; no.style.zIndex = 60;
+    floating = true;
+  }
+  const pad = 12, w = no.offsetWidth, h = no.offsetHeight;
+  no.style.left = pad + Math.random() * (innerWidth - w - pad*2) + 'px';
+  no.style.top  = pad + Math.random() * (innerHeight - h - pad*2) + 'px';
+  $('#noNote').textContent = CONFIG.noLines[Math.min(tries++, CONFIG.noLines.length - 1)];
+  if (tries > 3) no.textContent = 'Yes 😳';
+}
+['pointerenter','touchstart','click'].forEach(ev => no.addEventListener(ev, dodge, {passive:false}));
+no.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') dodge(e); });
+
+$('#yes').addEventListener('click', () => {
+  $('#ask').style.display = 'none'; no.style.display = 'none';
+  $('#thanks').classList.add('show');
+  for (let i = 0; i < 6; i++) setTimeout(() => burst(innerWidth * Math.random(), innerHeight * .4 * Math.random() + 60, 40), i * 350);
+});
+
+/* ---------- floating hearts background ---------- */
+const bg = $('#bg'), bctx = bg.getContext('2d'); let hearts = [];
+function sizeCanvas(c){ c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio; c.getContext('2d').setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+function spawnHeart(init){
+  return { x: Math.random() * innerWidth, y: init ? Math.random() * innerHeight : innerHeight + 30,
+    s: 8 + Math.random() * 20, v: .25 + Math.random() * .6, sw: Math.random() * Math.PI * 2,
+    a: .15 + Math.random() * .3, c: ['#ff7eb3','#ffb199','#b79cff','#ffc2dc'][Math.floor(Math.random()*4)] };
+}
+function drawHeart(ctx, x, y, s, color, alpha){
+  ctx.save(); ctx.globalAlpha = alpha; ctx.fillStyle = color; ctx.translate(x, y); ctx.scale(s/16, s/16);
+  ctx.beginPath(); ctx.moveTo(0, 6); ctx.bezierCurveTo(-14, -4, -8, -14, 0, -6); ctx.bezierCurveTo(8, -14, 14, -4, 0, 6); ctx.fill(); ctx.restore();
+}
+function initBg(){ sizeCanvas(bg); hearts = Array.from({length: innerWidth < 600 ? 14 : 28}, () => spawnHeart(true)); }
+function loopBg(){
+  bctx.clearRect(0, 0, innerWidth, innerHeight);
+  hearts.forEach((h, i) => {
+    h.y -= h.v; h.sw += .015; h.x += Math.sin(h.sw) * .4;
+    drawHeart(bctx, h.x, h.y, h.s, h.c, h.a);
+    if (h.y < -30) hearts[i] = spawnHeart(false);
+  });
+  requestAnimationFrame(loopBg);
+}
+initBg(); if (!reduced) loopBg(); else hearts.forEach(h => drawHeart(bctx, h.x, h.y, h.s, h.c, h.a));
+addEventListener('resize', () => { initBg(); sizeCanvas(cv); });
+
+/* ---------- confetti / heart burst ---------- */
+const cv = $('#confetti'), cctx = cv.getContext('2d'); let bits = [], running = false;
+sizeCanvas(cv);
+function burst(x, y, n = 20, small = false){
+  if (reduced) return;
+  for (let i = 0; i < n; i++){
+    const a = Math.random() * Math.PI * 2, sp = (small ? 2 : 3) + Math.random() * (small ? 3 : 7);
+    bits.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 2, g: .12, life: 1,
+      s: 7 + Math.random() * (small ? 8 : 14), c: ['#ff7eb3','#ffb199','#b79cff','#ffd36b','#ff9ec7'][Math.floor(Math.random()*5)], heart: Math.random() < .6 });
+  }
+  if (!running){ running = true; requestAnimationFrame(tick); }
+}
+function tick(){
+  cctx.clearRect(0, 0, innerWidth, innerHeight);
+  bits = bits.filter(b => b.life > 0);
+  bits.forEach(b => {
+    b.x += b.vx; b.y += b.vy; b.vy += b.g; b.vx *= .99; b.life -= .012;
+    if (b.heart) drawHeart(cctx, b.x, b.y, b.s, b.c, Math.max(b.life, 0));
+    else { cctx.globalAlpha = Math.max(b.life, 0); cctx.fillStyle = b.c; cctx.fillRect(b.x, b.y, b.s/2, b.s/2); cctx.globalAlpha = 1; }
+  });
+  if (bits.length) requestAnimationFrame(tick); else { running = false; cctx.clearRect(0,0,innerWidth,innerHeight); }
+}
+/* tap anywhere = little hearts */
+addEventListener('pointerdown', e => { if (!e.target.closest('button')) burst(e.clientX, e.clientY, 5, true); });
+</script>
+</body>
+</html>
